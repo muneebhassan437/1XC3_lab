@@ -2,6 +2,7 @@
 
 int main()
 {
+    //xlsll,c
     const float F = 1.23456789f;
     const double D = 1.23456789;
     const long double L = 1.23456789L;
