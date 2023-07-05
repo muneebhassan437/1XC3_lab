@@ -1,10 +1,11 @@
-// this code is written by Pedram
 #include <stdio.h>
-// the main function
-int main(void)
+int main()
 {
-    /* calling " printf " function
-    the " defination " is included in " stdio " library */
-    printf(" Hello , McMaster ! ");
-    printf(" Hello , McMaster ! ");
+    int x = 6;
+    printf(" Original value : %d\n", x);
+    printf(" After x ++: %d\n", x++);    // Postfix increment
+    printf(" After ++x: %d\n", ++x);     // Prefix increment
+    printf(" After x - -: %d\n", x--); // Postfix decrement
+    printf(" After --x: %d\n", --x);     // Prefix decrement
 }
+

@@ -21,7 +21,6 @@ int main()
     strcat(s3, s2); // Concatenate s2 to s3
 
     printf("s3: %s\n", s3);
-    printf("Size of s3: %zu\n", sizeof(s3));
-    printf("s3[17]: %c\n", s3[17]);
+    
     return 0;
 }
