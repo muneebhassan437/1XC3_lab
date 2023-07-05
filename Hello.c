@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int x = 7;
+    int x = 10;
     printf(" Original value : %d\n", x);
     printf(" After x ++: %d\n", x++);    // Postfix increment
     printf(" After ++x: %d\n", ++x);     // Prefix increment
