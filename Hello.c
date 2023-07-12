@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main()
 {
-    int x = 12;
-    printf(" Original value : %d\n", x);
-    printf(" After x ++: %d\n", x++);    // Postfix increment
-    printf(" After ++x: %d\n", ++x);     // Prefix increment
-    printf(" After x - -: %d\n", x--); // Postfix decrement
-    printf(" After --x: %d\n", --x);     // Prefix decrement
+    int i = 0;
+    while (i < 10)
+    {
+        printf(" Iteration %d\n", i);
+        i++;
+    }
+    printf("The end of loop \n");
 }
-
