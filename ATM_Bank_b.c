@@ -2,14 +2,34 @@
 #include <math.h>
 int main()
 {
-    int choice;
-    float balance;
+    int choice;     // this variable stores the user's choice input (1,2,3,0).
+    float balance;  // this variable stores the balance of user's account
+    float interest; // this variable stores the interest rate provided by user.
 
-    printf("Please enter your initial balance: ");
-    scanf("%f", &balance);
+    printf("Enter your interest rate between 0 and 1: ");
+    // Loop until a valid number is entered
+    while ((scanf("%f", &interest) != 1) || (interest < 0) || (interest > 1))
+    {
+        // Clear the input buffer
+        while (getchar() != '\n')
+            ;
+        printf("Invalid input. Enter your interest rate between 0 and 1: ");
+    }
 
+    printf("Enter your balance: ");
+    // Loop until a valid number is entered
+    while ((scanf("%f", &balance) != 1) || (balance < 0))
+    {
+        // Clear the input buffer
+        while (getchar() != '\n')
+            ;
+        printf("Invalid input. Enter your balance: ");
+    }
+
+    // The do..while loop will ask the user to select its choice of operation untill the choice entered is 0
     do
     {
+        printf("\n");
         printf("Select an operation: \n");
         printf("1. Deposit \n");
         printf("2. Withdraw \n");
@@ -24,60 +44,65 @@ int main()
         {
         case 1:
             float deposit;
+            printf("\n");
             printf("Please enter amount to deposit: ");
-            scanf("%f", &deposit);
-            if (deposit < 0)
+            while ((scanf("%f", &deposit) != 1) || (deposit < 0))
             {
-                printf("Please enter a positive number. \n");
+                // Clear the input buffer
+                while (getchar() != '\n')
+                    ;
+                printf("Invalid input. Enter amount to deposit: ");
             }
-            else
-            {
-                balance += deposit;
-                printf("Your total Balance is: %.2f \n", balance);
-            }
+            balance += deposit;
+            printf("\n");
+            printf("Your new balance is: %.2f", balance);
+            printf("\n");
             break;
 
         case 2:
             float withdraw;
+            printf("\n");
             printf("Please enter amount to withdraw: ");
-            scanf("%f", &withdraw);
-            if (withdraw < 0)
+            while ((scanf("%f", &withdraw) != 1) || (withdraw < 0) || ((balance - withdraw) < 0))
             {
-                printf("Please enter a positive number. \n");
+                // Clear the input buffer
+                while (getchar() != '\n')
+                    ;
+                printf("Invalid input. Enter amount to withdraw: ");
             }
-            else if ((balance - withdraw) < 0)
-            {
-                printf("You cannot withdraw that amount. try again \n");
-            }
-            else
-            {
-                balance -= withdraw;
-                printf("Your total Balance is: %.2f \n", balance);
-            }
+            balance -= withdraw;
+            printf("\n");
+            printf("Your new balance is: %.2f", balance);
+            printf("\n");
             break;
 
         case 3:
-            printf("Your total balance is: %.2f \n", balance);
+            printf("\nYour total balance is: %.2f \n", balance);
             break;
 
         case 4:
             int years;
             float result;
-            const float interest;
-            printf("Please enter your desired interest rate");
-            scanf("%f",&interest);
-            printf("Please enter the number of years: ");
-            scanf("%d",&years);
+            printf("\n");
+            printf("Please enter number of years: ");
+            while (scanf("%d", &years) != 1)
+            {
+                // Clear the input buffer
+                while (getchar() != '\n')
+                    ;
+                printf("Invalid input. Enter number of years: ");
+            }
             result = balance * pow((1 + interest), years);
-            printf("Your balance will be %.2f", result);
+            printf("\nYour balance will be %.2f", result);
+            printf("\n");
             break;
-            
+
         case 0:
-            printf("Thankyou for using 'DoesNotexist' Bank. take care! \n");
+            printf("\nThankyou for using 'DoesNotexist' Bank. take care! \n");
             break;
 
         default:
-            printf("Wrong input. Please try again! \n");
+            printf("\nWrong input. Please try again! \n");
         }
 
     } while (choice != 0);

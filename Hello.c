@@ -1,11 +1,13 @@
 #include <stdio.h>
-int main()
-{
-    int i = 0;
-    while (i < 10)
-    {
-        printf(" Iteration %d\n", i);
-        i++;
+int main() {
+int number;
+    printf("Enter a number: ");
+    // Loop until a valid number is entered
+    while (scanf("%d", &number) != 1) {
+        // Clear the input buffer
+        while (getchar() != '\n');
+        printf("Invalid input. Enter a number: ");
     }
-    printf("The end of loop \n");
+    printf("You entered: %d\n", number);
+    return 0;
 }
