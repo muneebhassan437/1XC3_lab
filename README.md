@@ -5,4 +5,10 @@ This repo contains files related to:
 * Assignment 2
 * course work
 * final project
-  
+
+## ssstoppppp
+*warning* you must stop
+
+# Jk
+**just kidding lmao**
+
